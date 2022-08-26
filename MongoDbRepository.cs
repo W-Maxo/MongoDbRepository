@@ -49,23 +49,6 @@ public class MongoDbRepository<TEntity> : IRepository<TEntity> where TEntity : E
         mongoDatabase = mongoClient.GetDatabase(databaseName);
     }
 
-    //private string GetConnectionString()
-    //{
-    //    return "";
-    //    //ConfigurationManager
-    //    //.AppSettings
-    //    //.Get(“MongoDbConnectionString”)
-    //    //.Replace("{ DB_NAME}", GetDatabaseName());
-    //}
-
-    //private string GetDatabaseName()
-    //{
-    //    return "";
-    //    //ConfigurationManager
-    //    //.AppSettings
-    //    //.Get("MongoDbDatabaseName");
-    //}
-
     private void GetCollection(string CollectionName)
     {
         collection = mongoDatabase.GetCollection<TEntity>(CollectionName);
